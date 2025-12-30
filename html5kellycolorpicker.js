@@ -362,7 +362,7 @@ function KellyColorPicker(cfg) {
     }
 
     var wheel = new Object;
-    wheel.width = 18;
+    wheel.width = 27;
     wheel.imageData = null; // rendered wheel image data
     wheel.innerRadius;
     wheel.startAngle = 0; // 150
