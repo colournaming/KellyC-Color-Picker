@@ -410,18 +410,18 @@ function KellyColorPicker(cfg) {
             ctx.fill();
 
             ctx.globalCompositeOperation = "source-over";
-            ctx.strokeStyle = this.innerStrokeStyle; // 'rgba(0,0,0,0.2)';
-            ctx.lineWidth = 2;
-            ctx.stroke();
+            // ctx.strokeStyle = this.innerStrokeStyle; // 'rgba(0,0,0,0.2)';
+            // ctx.lineWidth = 2;
+            // ctx.stroke();
             ctx.closePath();
 
             // wheel border
-            ctx.beginPath();
-            ctx.arc(center, center, this.outerRadius, 0, PI * 2);
-            ctx.strokeStyle = this.outerStrokeStyle;
-            ctx.lineWidth = 2;
-            ctx.stroke();
-            ctx.closePath();
+            // ctx.beginPath();
+            // ctx.arc(center, center, this.outerRadius, 0, PI * 2);
+            // ctx.strokeStyle = this.outerStrokeStyle;
+            // ctx.lineWidth = 2;
+            // ctx.stroke();
+            // ctx.closePath();
 
             this.imageData = ctx.getImageData(0, 0, wheelBlockSize, wheelBlockSize);
         }
