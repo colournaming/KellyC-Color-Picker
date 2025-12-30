@@ -398,9 +398,9 @@ function KellyColorPicker(cfg) {
                 //ctx.fillStyle = 'hsl('+hAngle+', 100%, 50%)';
                 ctx.fill();
 
-                hAngle++;
-                if (hAngle >= 360)
-                    hAngle = 0;
+                hAngle--;
+                if (hAngle < 0)
+                    hAngle = 359;
             }
 
             ctx.globalCompositeOperation = "destination-out"; // cut out color wheel inside by circle next
@@ -1849,7 +1849,7 @@ function KellyColorPicker(cfg) {
             return false;
         }
 
-        var curAngle = hsv.h * 360 - wheel.startAngle;
+        var curAngle = (360 - hsv.h * 360) - wheel.startAngle;
 
         // cursors
 
@@ -1988,7 +1988,9 @@ function KellyColorPicker(cfg) {
         if (angle < 0)
             angle = 360 + angle;
 
-        hsv.h = angle / 360;
+        hsv.h = (360 - angle) / 360;
+        if (hsv.h >= 1)
+            hsv.h = 0;
 
         rgb = hsvToRgb(hsv.h, hsv.s, hsv.v);
         hex = rgbToHex(rgb);
